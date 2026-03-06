@@ -1,5 +1,7 @@
 package creational.factory_method;
 
+import creational.Factory.MacBook;
+
 public abstract class MacBookCreator {
     // Той самий Фабричний Метод
     public abstract MacBook produceMacBook();
