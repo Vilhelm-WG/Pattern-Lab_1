@@ -10,6 +10,6 @@ public abstract class MacBookCreator {
     public void deliverToStore() {
         MacBook mac = produceMacBook();
         mac.assemble();
-        System.out.println("Ноутбук запаковано і відправлено в Apple Store!");
+        System.out.println("Ноутбук запаковано і відправлено з Apple Store!");
     }
 }

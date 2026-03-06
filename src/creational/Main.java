@@ -20,12 +20,12 @@ public class Main {
         ProductionLogger logger = ProductionLogger.getInstance();
         logger.log("Початок робочої зміни IT-відділу.");
 
-        System.out.println("\n--- 2. Simple Factory ---");
+        System.out.println("\n--- 1. Simple Factory ---");
         SimpleMacBookFactory simpleFactory = new SimpleMacBookFactory();
         MacBook simpleAir = simpleFactory.createMacBook("Air");
         simpleAir.assemble();
 
-        System.out.println("\n--- 3. Factory Method ---");
+        System.out.println("\n--- 2. Factory Method ---");
         // Використовуємо фабричний метод через конкретних творців
         MacBookCreator airPlant = new AirCreator();
         airPlant.deliverToStore(); // Викличе BasicAir
@@ -34,7 +34,7 @@ public class Main {
         proPlant.deliverToStore(); // Викличе BasicPro
 
         // 3. Builder: Збираємо потужний кастомний мак
-        logger.log("Збираємо кастомний лептоп для тімліда.");
+        logger.log("\n3. Збираємо кастомний лептоп для тімліда.");
         CustomMacBook customPro = new CustomMacBookBuilder()
                 .setChip("M3 Max")
                 .setRam(128)
@@ -43,7 +43,7 @@ public class Main {
         System.out.println(customPro);
 
         // 4. Abstract Factory: Видаємо обладнання сумісне між собою
-        logger.log("Комплектуємо сучасне робоче місце.");
+        logger.log("\n4.Комплектуємо сучасне робоче місце.");
         AppleEcosystemFactory ecosystemFactory = new ModernSiliconFactory();
         Laptop modernLaptop = ecosystemFactory.createLaptop();
         Charger modernCharger = ecosystemFactory.createCharger();
@@ -51,7 +51,7 @@ public class Main {
         modernCharger.charge();
 
         // 5. Prototype: Налаштовуємо середовище розробника
-        logger.log("Клонуємо налаштування для нових розробників.");
+        logger.log("\n5 Клонуємо налаштування для нових розробників.");
         DeveloperSetup baseSetup = new DeveloperSetup("macOS Sonoma", "IntelliJ IDEA");
         DeveloperSetup dev1Setup = baseSetup.clone();
         DeveloperSetup dev2Setup = baseSetup.clone();
