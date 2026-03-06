@@ -2,10 +2,7 @@ package creational;// Файл: creational.Main.java
 
 import creational.Factory.MacBook;
 import creational.Factory.SimpleMacBookFactory;
-import creational.abstract_factory.AppleEcosystemFactory;
-import creational.abstract_factory.Charger;
-import creational.abstract_factory.Laptop;
-import creational.abstract_factory.ModernSiliconFactory;
+import creational.abstract_factory.*;
 import creational.builder.CustomMacBook;
 import creational.factory_method.AirCreator;
 import creational.factory_method.MacBookCreator;
@@ -42,10 +39,14 @@ public class Main {
         System.out.println(customPro);
 
         // 4. Abstract Factory: Видаємо обладнання сумісне між собою
-        logger.log("\n4.Комплектуємо сучасне робоче місце.");
-        AppleEcosystemFactory ecosystemFactory = new ModernSiliconFactory();
+        logger.log("\n4. Комплектуємо сучасне робоче місце.");
+
+        // Отримуємо фабрику через Provider, не використовуючи new для конкретних класів!
+        AppleEcosystemFactory ecosystemFactory = EcosystemFactoryProvider.getFactory("Modern");
+
         Laptop modernLaptop = ecosystemFactory.createLaptop();
         Charger modernCharger = ecosystemFactory.createCharger();
+
         modernLaptop.showSpecs();
         modernCharger.charge();
 
