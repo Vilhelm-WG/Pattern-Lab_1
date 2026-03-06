@@ -7,7 +7,6 @@ import creational.abstract_factory.Charger;
 import creational.abstract_factory.Laptop;
 import creational.abstract_factory.ModernSiliconFactory;
 import creational.builder.CustomMacBook;
-import creational.builder.CustomMacBookBuilder;
 import creational.factory_method.AirCreator;
 import creational.factory_method.MacBookCreator;
 import creational.factory_method.ProCreator;
@@ -35,7 +34,7 @@ public class Main {
 
         // 3. Builder: Збираємо потужний кастомний мак
         logger.log("\n3. Збираємо кастомний лептоп для тімліда.");
-        CustomMacBook customPro = new CustomMacBookBuilder()
+        CustomMacBook customPro = new CustomMacBook.CustomMacBookBuilder()
                 .setChip("M3 Max")
                 .setRam(128)
                 .setStorage(2048)
