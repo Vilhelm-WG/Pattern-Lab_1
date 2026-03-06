@@ -1,11 +1,11 @@
-package creational.factory_method;
+package creational.Factory;
 
-public class MacBookFactory {
-    public StandardMacBook createMacBook(String type) {
+public class SimpleMacBookFactory {
+    public MacBook createMacBook(String type) {
         if (type.equalsIgnoreCase("Air")) {
-            return new MacBookAir();
+            return new BasicAir();
         } else if (type.equalsIgnoreCase("Pro")) {
-            return new MacBookPro();
+            return new BasicPro();
         }
         throw new IllegalArgumentException("Невідома модель: " + type);
     }
